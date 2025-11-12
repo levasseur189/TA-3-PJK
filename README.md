@@ -56,7 +56,7 @@ Analisis: PC-C berhasil terhubung ke kedua switch karena tidak ada default gatea
 
 
 5. Ping Switch 1 (S1) ke Switch 2 (S2)
-Pengecekan konektivitas antar switch, kemungkinan melalui link trunk. Part 1 Ping Switch 1 ke Switch 2
+Pengecekan konektivitas antar switch, kemungkinan melalui link trunk. 
 <img width="1028" height="267" alt="image" src="https://github.com/user-attachments/assets/537123bf-1d97-4c8a-bd47-b6453d7881d2" />
 
 
@@ -81,6 +81,9 @@ Penting: Kegagalan ping pada tahap ini sudah diharapkan. Ini terjadi karena port
 
 Hasil: Gagal (100% loss).
 Analisis: Meskipun PC-A dan PC-B sekarang berada di VLAN yang sama (VLAN 10), trafik antar-switch untuk VLAN 10 diblokir karena tidak ada trunk link yang mengizinkannya.
+
+
+
 2. Ping Switch 1 ke Switch 2 (Gagal)
 <img width="1065" height="130" alt="image" src="https://github.com/user-attachments/assets/4461e900-88ec-4928-b568-999aafa54f9e" />
 
@@ -101,16 +104,21 @@ Setelah link trunk terbentuk, konektivitas yang sebelumnya gagal di Part 2 sekar
 
 Hasil: Sukses (0% loss).
 Analisis: Link trunk sekarang mengizinkan trafik untuk VLAN 10 (Operations) lewat. Karena kedua PC berada di VLAN yang sama, mereka sekarang dapat berkomunikasi melintasi kedua switch.
+
 2. Ping Switch 1 (VLAN 99) ke Switch 2 (VLAN 99)
 <img width="1052" height="274" alt="image" src="https://github.com/user-attachments/assets/5001c65a-b46d-4b81-b3c7-2fbf869f75af" />
 
 Hasil: Sukses (100% success).
 Analisis: Link trunk juga mengizinkan trafik untuk VLAN 99 (Management). Ini memungkinkan interface manajemen S1 dan S2 untuk saling berkomunikasi.
+
+
 3. Ping PC-B (VLAN 10) ke Switch 2 (VLAN 99)
 <img width="1024" height="327" alt="image" src="https://github.com/user-attachments/assets/444da677-39a0-46e4-ad42-994198d2d3d5" />
 
 Hasil: Gagal (100% loss).
 Analisis: Ping ini gagal sesuai desain (inter-VLAN). PC-B berada di VLAN 10, sedangkan interface manajemen S2 berada di VLAN 99. Switch (Layer 2) tidak akan meneruskan trafik antara VLAN yang berbeda tanpa adanya router (Layer 3).
+
+
 4. Ping PC-C (VLAN 99) ke Switch 1 & 2 (VLAN 99)
 <img width="1001" height="631" alt="image" src="https://github.com/user-attachments/assets/a252d9f4-65ba-409e-a725-d80130bd512f" />
 

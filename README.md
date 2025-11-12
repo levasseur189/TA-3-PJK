@@ -40,6 +40,9 @@ Pengecekan konektivitas dari PC-B ke interface manajemen Switch 2 (S2).
 
 Hasil: Gagal (100% loss).
 Analisis: Sama seperti kasus PC-A, PC-B tidak dapat menjangkau interface manajemen S2 di 192.168.1.12.
+
+
+
 4. Ping PC-C ke Semua Switch
 Pengecekan konektivitas dari PC-C ke interface manajemen S1 (192.168.1.11) dan S2 (192.168.1.12). 
 <img width="1077" height="746" alt="image" src="https://github.com/user-attachments/assets/eceb44e5-9aa8-4138-8313-fc489bb15a13" />
